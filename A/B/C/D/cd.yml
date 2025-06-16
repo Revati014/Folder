@@ -5,7 +5,7 @@ pr: none
 resources:
   pipelines:
     - pipeline:  Revati014.CICD
-      source: Revati014.Folder  # Must match the CI pipeline name
+      source: /A/B/C/D/Ci # Must match the CI pipeline name
       trigger:
         branches:
           include:
