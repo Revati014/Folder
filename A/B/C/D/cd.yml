@@ -1,0 +1,32 @@
+name: SimpleCICD_CD
+trigger: none
+pr: none
+
+resources:
+  pipelines:
+    - pipeline:  Revati014.CICD
+      source: Revati014.CICD  # Must match the CI pipeline name
+      trigger:
+        branches:
+          include:
+            - main
+            - SimpleCICD_CD
+
+pool:
+  name: SelfHosted
+  demands:
+    - Agent.Name -equals Agennt
+
+steps:
+- task: CmdLine@2
+  inputs:
+    script: |
+      echo Write your commands here
+      
+      echo Hello world
+
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: |
+      Write-Host "Current Date and Time: $(Get-Date)"

@@ -1,0 +1,20 @@
+
+#asdfghjasdfghasdsdfdffffsdasd
+name: SimpleCICD_CI
+trigger:
+  branches:
+    include:
+      - main
+
+pool:
+  name: SelfHosted
+  demands:
+    - Agent.Name -equals Agennt
+
+steps:
+- task: CmdLine@2
+  inputs:
+    script: |
+      echo Write your commands here
+      
+      echo Hello world
