@@ -4,16 +4,16 @@ pr: none
 
 resources:
   pipelines:
-    - pipeline:  Revati014.CICD
-      source: Revati014.Folder # Must match the CI pipeline name
+    - pipeline: Revati014_CICD   # Reference name used in this pipeline
+      source: Revati014.Folder   # Name of the triggering pipeline
       trigger:
         branches:
           include:
             - main
             - SimpleCICD_CD
         paths:
-          include: 
-          - /A/B/C/D/*
+          include:
+            - A/B/C/D/*          # Path should not start with `/` in YAML
 
 pool:
   name: SelfHosted
@@ -22,13 +22,14 @@ pool:
 
 steps:
 - task: CmdLine@2
+  displayName: 'Run Command Line Script'
   inputs:
     script: |
       echo Write your commands here
-      
       echo Hello world
 
 - task: PowerShell@2
+  displayName: 'Print Date and Time'
   inputs:
     targetType: 'inline'
     script: |
