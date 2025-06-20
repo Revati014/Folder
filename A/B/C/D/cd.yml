@@ -11,6 +11,9 @@ resources:
           include:
             - main
             - SimpleCICD_CD
+        paths:
+          include: 
+          - /A/B/C/D/*
 
 pool:
   name: SelfHosted
