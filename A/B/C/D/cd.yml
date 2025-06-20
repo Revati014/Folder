@@ -4,8 +4,8 @@ pr: none
 
 resources:
   pipelines:
-    - pipeline: Revati014_CICD   # Reference name used in this pipeline
-      source: Revati014.Folder   # Name of the triggering pipeline
+    - pipeline: Revati014_CICD  
+      source: Revati014.Folder  
       trigger:
         branches:
           include:
@@ -13,7 +13,7 @@ resources:
             - SimpleCICD_CD
         paths:
           include:
-            - A/B/C/D/*          # Path should not start with `/` in YAML
+            - A/B/C/D/*         
 
 pool:
   name: SelfHosted
