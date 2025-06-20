@@ -1,4 +1,3 @@
-
 #asdfghjasdfghasdsdfdffffsdasdsafdgasdfgasdfghjkdsfweferfefsdf
 name: SimpleCICD_CI
 trigger:
@@ -12,6 +11,8 @@ pool:
     - Agent.Name -equals Agennt
 
 steps:
+- checkout: none
+ 
 - task: CmdLine@2
   inputs:
     script: |
