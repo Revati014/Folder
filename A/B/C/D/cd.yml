@@ -4,16 +4,12 @@ pr: none
 
 resources:
   pipelines:
-    - pipeline: Revati014_CICD  
-      source: Revati014.Folder (120)  
+    - pipeline: Revati014_CICD  # Alias for the CI pipeline
+      source: Revati014.Folder  # The actual CI pipeline name in Azure DevOps
       trigger:
         branches:
           include:
-            - main
-            - SimpleCICD_CD
-        paths:
-          include:
-            - A/B/C/D/*         
+            - main              # Trigger CD when CI completes on main
 
 pool:
   name: SelfHosted
@@ -21,16 +17,16 @@ pool:
     - Agent.Name -equals Agennt
 
 steps:
-- task: CmdLine@2
-  displayName: 'Run Command Line Script'
-  inputs:
-    script: |
-      echo Write your commands here
-      echo Hello world
+# ✅ Checkout the 'prasanna' branch
+- checkout: self
+  persistCredentials: true
+  clean: true
+  fetchDepth: 1
+  ref: refs/heads/prasanna
 
-- task: PowerShell@2
-  displayName: 'Print Date and Time'
-  inputs:
-    targetType: 'inline'
-    script: |
-      Write-Host "Current Date and Time: $(Get-Date)"
+# ✅ Run a script that exists in the 'prasanna' branch
+- script: |
+    echo "🌿 Now running from branch: prasanna"
+    echo "📄 Executing prasanna_script.sh..."
+    bash prasanna_script.sh
+  displayName: 'Run deployment script from prasanna branch'
