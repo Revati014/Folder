@@ -10,10 +10,6 @@ resources:
         branches:
           include:
             - main
-            - SimpleCICD_CD
-        paths:
-          include:
-            - A/B/C/D/*         
 
 pool:
   name: SelfHosted
@@ -21,16 +17,15 @@ pool:
     - Agent.Name -equals Agennt
 
 steps:
-- task: CmdLine@2
-  displayName: 'Run Command Line Script'
-  inputs:
-    script: |
-      echo Write your commands here
-      echo Hello world
+# Explicitly checkout the 'prasanna' branch
+- checkout: self
+  persistCredentials: true
+  clean: true
+  fetchDepth: 1
+  ref: refs/heads/prasanna
 
-- task: PowerShell@2
-  displayName: 'Print Date and Time'
-  inputs:
-    targetType: 'inline'
-    script: |
-      Write-Host "Current Date and Time: $(Get-Date)"
+# Run script that exists in 'prasanna' branch
+- script: |
+    echo "Running script from 'prasanna' branch"
+    bash prasanna_script.sh
+  displayName: 'Run prasanna_script.sh from prasanna branch'
