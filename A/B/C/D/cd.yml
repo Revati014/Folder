@@ -4,8 +4,8 @@ pr: none
 
 resources:
   pipelines:
-    - pipeline: Revati014_CICD  
-      source: githubci
+    - pipeline: 1234 
+      source: Revati014.Folder
       trigger:
         branches:
           include:
@@ -16,15 +16,10 @@ pool:
   demands:
     - Agent.Name -equals Agennt
 
-steps:
-# ✅ Checkout the 'Prasanna' branch (correct case)
-- checkout: self
-  persistCredentials: true
-  clean: true
-
-# ✅ Run the script from the correct folder path
-- script: |
-    echo "📁 Running Prasanna_script.sh from branch 'Prasanna'"
-    chmod +x A/B/C/D/Prasanna_script.sh
-    bash A/B/C/D/Prasanna_script.sh
-  displayName: 'Run Prasanna_script.sh from A/B/C/D'
+stages:
+- stage: RunStage
+  jobs:
+  - job: RunJob
+    steps:
+    - script: echo "🎯 Simple stage is running!"
+      displayName: 'Print Hello Message'
