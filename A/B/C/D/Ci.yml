@@ -5,6 +5,7 @@ trigger:
     include:
       - main
       - Prasanna
+      - SCGCP
 
 pool:
   name: SelfHosted
