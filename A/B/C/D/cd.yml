@@ -4,12 +4,12 @@ pr: none
 
 resources:
   pipelines:
-    - pipeline: Revati014_CICD  # Alias for the CI pipeline
-      source: githubci  # The actual CI pipeline name in Azure DevOps
+    - pipeline: Revati014_CICD  
+      source: githubci
       trigger:
         branches:
           include:
-            - main              # Trigger CD when CI completes on main
+            - main
 
 pool:
   name: SelfHosted
@@ -17,16 +17,16 @@ pool:
     - Agent.Name -equals Agennt
 
 steps:
-# ✅ Checkout the 'prasanna' branch
+# ✅ Checkout the 'Prasanna' branch (correct case)
 - checkout: self
   persistCredentials: true
   clean: true
   fetchDepth: 1
-  # ref: refs/heads/prasanna
+  ref: refs/heads/Prasanna  # exact branch name
 
-# ✅ Run a script that exists in the 'prasanna' branch
-#- script: |
-  #  echo "🌿 Now running from branch: prasanna"
-    #echo "📄 Executing prasanna_script.sh..."
-    #bash prasanna_script.sh
-  #displayName: 'Run deployment script from prasanna branch'
+# ✅ Run the script from the correct folder path
+- script: |
+    echo "📁 Running Prasanna_script.sh from branch 'Prasanna'"
+    chmod +x A/B/C/D/Prasanna_script.sh
+    bash A/B/C/D/Prasanna_script.sh
+  displayName: 'Run Prasanna_script.sh from A/B/C/D'
