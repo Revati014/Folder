@@ -5,7 +5,7 @@ pr: none
 resources:
   pipelines:
     - pipeline: Revati014_CICD  
-      source: Revati014.Folder (120)
+      source: Revati014.Folder
       trigger:
         branches:
           include:
