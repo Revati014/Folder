@@ -1,16 +1,10 @@
 #!/bin/bash
 
-echo "======================================"
-echo "✅ Hello from the 'prasanna' branch!"
-echo "🕒 Current Time: $(date)"
-echo "📁 Current Directory: $(pwd)"
-echo "👤 Running as user: $(whoami)"
-echo "======================================"
+echo "👋 Hello from the 'Prasanna' branch!"
+echo "📂 Script location: A/B/C/D/Prasanna_script.sh"
+echo "🕒 Current time: $(date)"
 
-# Example placeholder logic:
-echo "🚀 Simulating deployment step..."
+# Simulated deployment logic
+echo "🚀 Starting deployment..."
 sleep 2
-echo "✅ Deployment simulation complete."
-
-# Exit cleanly
-exit 0
+echo "✅ Deployment completed successfully!"
