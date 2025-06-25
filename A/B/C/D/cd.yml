@@ -25,8 +25,8 @@ steps:
   # ref: refs/heads/prasanna
 
 # ✅ Run a script that exists in the 'prasanna' branch
-- script: |
-    echo "🌿 Now running from branch: prasanna"
+#- script: |
+  #  echo "🌿 Now running from branch: prasanna"
     #echo "📄 Executing prasanna_script.sh..."
     #bash prasanna_script.sh
-  displayName: 'Run deployment script from prasanna branch'
+  #displayName: 'Run deployment script from prasanna branch'
