@@ -16,15 +16,10 @@ pool:
   demands:
     - Agent.Name -equals Agennt
 
-#steps:
-# Explicitly checkout the 'prasanna' branch
-#- checkout: self
-#  persistCredentials: true
- # fetchDepth: 1
-  #ref: refs/heads/prasanna
-
-# Run script that exists in 'prasanna' branch
-#- script: |
-   # echo "Running script from 'prasanna' branch"
- #   bash prasanna_script.sh
-#  displayName: 'Run prasanna_script.sh from prasanna branch'
+stages:
+- stage: RunStage
+  jobs:
+  - job: RunJob
+    steps:
+    - script: echo "🎯 Simple stage is running!"
+      displayName: 'Print Hello Message'
