@@ -5,7 +5,7 @@ pr: none
 resources:
   pipelines:
     - pipeline: Revati014_CICD  # Alias for the CI pipeline
-      source: Revati014.Folder  # The actual CI pipeline name in Azure DevOps
+      source: githubci  # The actual CI pipeline name in Azure DevOps
       trigger:
         branches:
           include:
