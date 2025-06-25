@@ -21,8 +21,6 @@ steps:
 - checkout: self
   persistCredentials: true
   clean: true
-  fetchDepth: 1
-  ref: refs/heads/Prasanna  # exact branch name
 
 # ✅ Run the script from the correct folder path
 - script: |
