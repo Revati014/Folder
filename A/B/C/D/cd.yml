@@ -27,6 +27,6 @@ steps:
 # ✅ Run a script that exists in the 'prasanna' branch
 - script: |
     echo "🌿 Now running from branch: prasanna"
-    echo "📄 Executing prasanna_script.sh..."
-    bash prasanna_script.sh
+    #echo "📄 Executing prasanna_script.sh..."
+    #bash prasanna_script.sh
   displayName: 'Run deployment script from prasanna branch'
