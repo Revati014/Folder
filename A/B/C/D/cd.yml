@@ -5,7 +5,7 @@ pr: none
 resources:
   pipelines:
     - pipeline: 1234 
-      source: #Revati014.Folder (128)
+      source: Revati014.Folder (128)
       trigger:
         branches:
           include:
